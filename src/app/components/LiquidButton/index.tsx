@@ -25,7 +25,7 @@ const LiquidButton = ({
   customWidth,
   isSelected,
   selectedTextColor = textColor2, // Default to textColor2 if not provided
-  selectedLiquidColor = liquidColor, // Default to liquidColor if not provided
+  selectedLiquidColor, // Default to liquidColor if not provided
 }: LiquidButtonProps) => {
   return (
     <div>
@@ -36,8 +36,9 @@ const LiquidButton = ({
       className="relative overflow-hidden px-6 py-3 rounded-md border border-current group"
       style={{
         color: selectedTextColor,
-        backgroundColor: selectedLiquidColor,
-        width: customWidth || "260px"
+        backgroundColor: selectedLiquidColor && selectedLiquidColor,
+        width: customWidth || "260px",
+        opacity: 0.8,
       }}
     >
 <span

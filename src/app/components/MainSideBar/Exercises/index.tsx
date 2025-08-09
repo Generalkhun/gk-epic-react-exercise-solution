@@ -64,7 +64,6 @@ const Exercises = () => {
                         baseColor="transparent"
                         isSelected={selectedExercise === exercise.id}
                         selectedTextColor='#FFFFF0'
-                        selectedLiquidColor='#DC143C'
                     />
                     
                 </div>
