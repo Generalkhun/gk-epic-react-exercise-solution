@@ -28,7 +28,7 @@ const LiquidButton = ({
     >
       {/* Liquid Fill Layer */}
       <span
-        className="absolute left-0 top-0 h-full w-0 group-hover:w-full transition-all duration-500 ease-in-out"
+        className="absolute left-0 top-0 h-full w-0 group-hover:w-full transition-all duration-100 ease-in-out"
         style={{
           backgroundColor: liquidColor,
           opacity: 0.3,
@@ -38,11 +38,11 @@ const LiquidButton = ({
 
       {/* Button Text */}
       <span
-        className="relative z-10 transition-colors duration-500 ease-in-out group-hover:text-[var(--hover-text-color)]"
+        className="relative z-10 transition-colors duration-100 ease-in-out group-hover:text-[var(--hover-text-color)]"
         style={
           {
             "--hover-text-color": textColor2,
-          } as React.CSSProperties & Record<string, any>
+          } as React.CSSProperties & Record<string, string>
         }
       >
         {text}
