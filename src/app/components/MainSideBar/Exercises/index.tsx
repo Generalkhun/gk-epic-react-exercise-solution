@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 import LiquidButton from '../../LiquidButton';
 
 interface Exercise {
@@ -42,6 +43,10 @@ const exercises: Exercise[] = [
     { id: 8, title: "Build an Epic React App" },
 ];
 const Exercises = () => {
+    const [selectedExercise, setSelectedExercise] = useState<null | number>(null);
+    const onSelectExercise = (id: number) => {
+        setSelectedExercise(id);
+    };
 
   return (
     <div>
@@ -50,11 +55,16 @@ const Exercises = () => {
             {exercises.map((exercise) => (
                 <div key={exercise.id} className="mb-2">
                     <LiquidButton
+                        exerciseId={exercise.id}
+                        onClick={onSelectExercise}
                         text={exercise.title}
                         textColor="#D2042D"
                         textColor2="D2042D"
                         liquidColor="#D2042D"
                         baseColor="transparent"
+                        isSelected={selectedExercise === exercise.id}
+                        selectedTextColor='#FFFFF0'
+                        selectedLiquidColor='#DC143C'
                     />
                     
                 </div>

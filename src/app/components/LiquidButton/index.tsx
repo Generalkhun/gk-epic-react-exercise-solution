@@ -6,7 +6,12 @@ interface LiquidButtonProps {
   textColor2: string;
   liquidColor: string;
   baseColor: string;
+  exerciseId: number;
+  onClick?: (id:number) => void; // Optional click handler
   customWidth?: string | number; // Optional prop for custom width
+  isSelected?: boolean; // Optional prop to indicate if the button is selected
+  selectedTextColor?: string; // Optional prop for selected text color
+  selectedLiquidColor?: string; // Optional prop for selected liquid color
 }
 
 const LiquidButton = ({
@@ -15,10 +20,38 @@ const LiquidButton = ({
   textColor2,
   liquidColor,
   baseColor,
-  customWidth
+  exerciseId,
+  onClick,
+  customWidth,
+  isSelected,
+  selectedTextColor = textColor2, // Default to textColor2 if not provided
+  selectedLiquidColor = liquidColor, // Default to liquidColor if not provided
 }: LiquidButtonProps) => {
   return (
-    <button
+    <div>
+      {isSelected ?
+      <button
+      onClick={() => onClick && onClick(exerciseId)}
+      type="button"
+      className="relative overflow-hidden px-6 py-3 rounded-md border border-current group"
+      style={{
+        color: selectedTextColor,
+        backgroundColor: selectedLiquidColor,
+        width: customWidth || "260px"
+      }}
+    >
+<span
+        className="relative z-10"
+      >
+        {text}
+      </span>
+
+    </button>
+      
+      : 
+       <button
+      onClick={() => onClick && onClick(exerciseId)}
+      type="button"
       className="relative overflow-hidden px-6 py-3 rounded-md border border-current group"
       style={{
         color: textColor,
@@ -48,6 +81,9 @@ const LiquidButton = ({
         {text}
       </span>
     </button>
+      }
+    </div>
+   
   );
 };
 
