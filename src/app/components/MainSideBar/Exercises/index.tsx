@@ -1,7 +1,6 @@
 import React from 'react'
 import LiquidButton from '../../LiquidButton';
 
-type Props = {}
 interface Exercise {
   id: number;
   title: string;
@@ -42,7 +41,7 @@ const exercises: Exercise[] = [
     { id: 7, title: "React Suspense" },
     { id: 8, title: "Build an Epic React App" },
 ];
-const Exercises = (props: Props) => {
+const Exercises = () => {
 
   return (
     <div>

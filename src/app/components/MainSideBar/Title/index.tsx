@@ -1,8 +1,7 @@
 import React from 'react'
 
-type Props = {}
 
-const Title = (props: Props) => {
+const Title = () => {
   return (
     <div className="flex items-start justify-start w-full gap-4 flex-col">
             <title className="text-3xl font-bold">

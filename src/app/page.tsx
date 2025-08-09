@@ -1,5 +1,4 @@
-import { Main } from "next/document";
-import Image from "next/image";
+
 import MainSideBar from "./components/MainSideBar";
 
 export default function Home() {
